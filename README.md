@@ -1,4 +1,4 @@
-ID-ControlNet: Identity-Preserving Face Completion with ControlNet
+ID-ControlNet: Recovering Occluded Facial Features Using Identity-Aware Generative Models
 Overview
 
 ID-ControlNet is a framework for masked face image completion that preserves the identity of the target person while producing visually realistic outputs. Given a masked face and a frozen identity embedding (from a pretrained face recognition model), the system reconstructs the occluded regions in a way that faithfully matches the original person’s identity.
