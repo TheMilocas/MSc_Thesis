@@ -1,3 +1,20 @@
+ID-ControlNet: Identity-Preserving Face Completion with ControlNet
+Overview
+
+ID-ControlNet is a framework for masked face image completion that preserves the identity of the target person while producing visually realistic outputs. Given a masked face and a frozen identity embedding (from a pretrained face recognition model), the system reconstructs the occluded regions in a way that faithfully matches the original person’s identity.
+
+Unlike methods that require per-subject fine-tuning, ID-ControlNet leverages a pretrained latent diffusion model and trains only a small control branch.
+
+How It Works
+
+- The input face embedding is projected into a spatial representation and injected into a frozen diffusion model.
+
+- The control branch gradually guides the model to reconstruct identity-specific details without modifying the pretrained network.
+
+- Training uses a combination of image reconstruction, identity alignment, and cycle consistency to ensure outputs are both realistic and identity-preserving.
+
+- During inference, you provide a masked face and the corresponding embedding, and the system reconstructs the missing facial content.
+
 Command for training script:
 
 CUDA_VISIBLE_DEVICES=1 accelerate launch ControlNet_plus_plus/train/my_reward_control.py \
