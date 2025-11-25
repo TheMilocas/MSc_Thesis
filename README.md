@@ -16,7 +16,7 @@ How It Works
 - During inference, you provide a masked face and the corresponding embedding, and the system reconstructs the missing facial content.
 
 Command for training script:
-
+```
 CUDA_VISIBLE_DEVICES=1 accelerate launch ControlNet_plus_plus/train/my_reward_control.py \
   --pretrained_model_name_or_path="stable-diffusion-v1-5/stable-diffusion-v1-5" \
   --dataset_name="Milocas/celebahq_single_mask" \
@@ -32,9 +32,10 @@ CUDA_VISIBLE_DEVICES=1 accelerate launch ControlNet_plus_plus/train/my_reward_co
   --checkpointing_steps=5000 \
   --output_dir="identity_controlnet_last" \
   --reward_model_name_or_path="ARCFACE/models/R100_MS1MV3/backbone.pth"
-
+```
 The environment should be organized in a way similar to this:
 
+```
 workspace/
 │
 ├── stable-diffusion-v1-5/               # Base SD1.5 model
@@ -48,7 +49,7 @@ workspace/
     └── models/
         └── R100_MS1MV3/
             └── backbone.pth             # ArcFace model file
-
+```
 Full version of this repo at https://github.com/TheMilocas/Tese.
 
 For more information about this repo contact me at joaobsantos2001@tecnico.ulisboa.pt
