@@ -32,3 +32,23 @@ CUDA_VISIBLE_DEVICES=1 accelerate launch ControlNet_plus_plus/train/my_reward_co
   --checkpointing_steps=5000 \
   --output_dir="identity_controlnet_last" \
   --reward_model_name_or_path="ARCFACE/models/R100_MS1MV3/backbone.pth"
+
+The environment should be organized in a way similar to this:
+
+workspace/
+│
+├── stable-diffusion-v1-5/               # Base SD1.5 model
+│   └── stable-diffusion-v1-5/           # (folder containing checkpoints)
+│
+├── ControlNet_plus_plus/                # ControlNet main dir
+│   └── train/
+│       └── my_reward_control.py         # Training script
+│
+└── ARCFACE/                             # ArcFace model folder
+    └── models/
+        └── R100_MS1MV3/
+            └── backbone.pth             # ArcFace model file
+
+Full version of this repo at https://github.com/TheMilocas/Tese.
+
+For more information about this repo contact me at joaobsantos2001@tecnico.ulisboa.pt
